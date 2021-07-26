@@ -1,0 +1,20 @@
+.paperClass{
+    display: flex;
+    justify-content: space-between
+}
+.aClass{
+    text-decoration: none;
+}
+
+.divClass{
+    display: flex;
+}
+
+.imgClass{
+    width: 40px;
+}
+
+.tabsClass{
+    width: 40%;
+    padding-left: 40%;
+}
