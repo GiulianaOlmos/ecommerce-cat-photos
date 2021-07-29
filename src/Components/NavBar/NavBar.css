@@ -4,6 +4,7 @@
 }
 .aClass{
     text-decoration: none;
+    padding: 0.5rem;
 }
 
 .divClass{
@@ -16,5 +17,9 @@
 
 .tabsClass{
     width: 40%;
-    padding-left: 40%;
+    padding: 0.5rem;
+}
+
+.cartWidgetClass{
+    margin: 1rem 3rem 1rem 1rem;
 }

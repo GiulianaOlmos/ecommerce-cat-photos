@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.greetingClass{
+  border: 2px solid teal;
+  text-align: center;
+  color: rgb(1, 59, 59);
+  font-size: 40px;
+}
