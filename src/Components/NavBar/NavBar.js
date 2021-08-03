@@ -15,10 +15,10 @@ function NavBar() {
                     <p>Cat Photos Shop</p>
                 </div>
             </a>
-            <Tabs className="tabsClass">
-                <Tab label="Sobre Nosotros" />
-                <Tab label="Productos" />
-                <Tab label="Contacto" />
+            <Tabs className="tabsClass" value="1">
+                <Tab label="Sobre Nosotros" value="1"/>
+                <Tab label="Productos" value="2"/>
+                <Tab label="Contacto" value="3" />
             </Tabs>
             <CartWidget />
         </Paper>
