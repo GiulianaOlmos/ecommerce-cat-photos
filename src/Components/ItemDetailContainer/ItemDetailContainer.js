@@ -1,24 +1,19 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
 import ItemDetails from "../ItemDetails/ItemDetails";
+import { productsJson } from "../../Data/productosJson";
 
 function ItemDetailContainer(props) {
   const [detailItem, setDetailItem] = useState([]);
-
-  let getIntems = new Promise((resolve, reject) => {
-    let array = {
-      price: 100,
-      url: "https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/59c4f5655bafe82c692a7052/gato-marron_0.jpg",
-      description: "Corresponde a la foto de un gato muy beiio",
-    };
-
-    setTimeout(() => {
-      resolve(array);
-    }, 2000);
-  });
+  const { id } = useParams();
 
   useEffect(() => {
-    getIntems.then((data) => setDetailItem(data));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    new Promise((resolve, reject) => {
+      setTimeout(
+        () => resolve(productsJson.filter((item) => item.id == id)),
+        2000
+      );
+    }).then((data) => setDetailItem(data[0]));
   }, []);
 
   return (
