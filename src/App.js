@@ -20,6 +20,9 @@ function App() {
           <Route exact path="/category/:id">
             <ItemCategory />
           </Route>
+          <Route exact path="/cart">
+            <ItemCategory />
+          </Route>
         </Switch>
       </BrowserRouter>
     </>

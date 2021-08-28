@@ -2,6 +2,7 @@ export const productsJson = [
   {
     id: 1,
     categoryId: 1,
+    stock: 52,
     title: "Foto Gato 1",
     price: 100,
     description: "Corresponde a la foto de un gato muy beiio",
@@ -10,6 +11,7 @@ export const productsJson = [
   {
     id: 2,
     categoryId: 2,
+    stock: 100,
     title: "Foto Gato 2",
     price: 200,
     description: "Corresponde a la foto de un gato muy beiio",
@@ -18,6 +20,7 @@ export const productsJson = [
   {
     id: 3,
     categoryId: 3,
+    stock: 200,
     title: "Foto Gato 3",
     price: 300,
     description: "Corresponde a la foto de un gato muy beiio",

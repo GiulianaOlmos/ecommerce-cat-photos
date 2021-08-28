@@ -3,10 +3,11 @@ import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 
 function ItemCount(props) {
-  const [count, setCount] = useState(props.initial);
+  const [count, setCount] = useState(0);
 
   const sumar = () => {
-    if (count < props.stock) {
+    console.log(`el stock es ${props.data.stock}`);
+    if (count < props.data.stock) {
       setCount(count + 1);
     }
   };
@@ -15,10 +16,6 @@ function ItemCount(props) {
     if (count > 0) {
       setCount(count - 1);
     }
-  };
-
-  const onAdd = () => {
-    console.log(`Se compraron ${count}`);
   };
 
   const itemCountStyle = {
@@ -34,7 +31,7 @@ function ItemCount(props) {
 
   return (
     <div style={itemCountStyle}>
-      <h1>Foto gato 1</h1>
+      <h1>{props.data.title}</h1>
       <h3>{count}</h3>
       <ButtonGroup
         style={buttonGroup}
@@ -46,7 +43,7 @@ function ItemCount(props) {
           variant="outlined"
           color="primary"
           href="#outlined-buttons"
-          disabled={props.stock === 0}
+          disabled={props.data.stock == 0}
         >
           sumar
         </Button>
@@ -59,7 +56,12 @@ function ItemCount(props) {
           Restar
         </Button>
       </ButtonGroup>
-      <Button disabled={props.stock === 0} onClick={() => onAdd()} variant="contained" color="primary">
+      <Button
+        disabled={count == 0}
+        onClick={() => props.onAdd(count)}
+        variant="contained"
+        color="primary"
+      >
         Agregar al carrito
       </Button>
     </div>
