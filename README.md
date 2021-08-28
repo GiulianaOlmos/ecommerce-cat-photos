@@ -1,3 +1,11 @@
+# Ecommerce.cat-photos
+This is an ecommerce specially created to sell cat photos. 
+We love cats.
+
+# Techonology
+I use ReactJs to work on this project. 
+At this moment I use a JSON like a database.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

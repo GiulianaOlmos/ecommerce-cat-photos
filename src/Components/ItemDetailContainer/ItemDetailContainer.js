@@ -14,7 +14,7 @@ function ItemDetailContainer(props) {
         2000
       );
     }).then((data) => setDetailItem(data[0]));
-  }, []);
+  }, [id]);
 
   return (
     <>

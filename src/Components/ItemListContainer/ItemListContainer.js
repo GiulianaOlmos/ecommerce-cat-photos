@@ -23,7 +23,7 @@ function ItemListContainer(props) {
         );
       }).then((data) => setListItems(data));
     }
-  }, []);
+  }, [id]);
 
   return (
     <div>
