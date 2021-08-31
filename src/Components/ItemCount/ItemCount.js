@@ -58,7 +58,7 @@ function ItemCount(props) {
       </ButtonGroup>
       <Button
         disabled={count == 0}
-        onClick={() => props.onAdd(count)}
+        onClick={() => props.onAdd(count, props.data.title)}
         variant="contained"
         color="primary"
       >

@@ -4,8 +4,12 @@ import Home from "./Pages/Home/home";
 import ItemDetail from "./Pages/ItemDetail/itemDetails";
 import ItemCategory from "./Pages/ItemCategory/itemCategory";
 import "../src/App.css";
+import { CartContext } from "../src/Context/cartContext";
+import { useState } from "react";
+
 
 function App() {
+  const [quantity, setQuantity] = useState(0);
   return (
     <>
       <BrowserRouter>
@@ -15,7 +19,9 @@ function App() {
             <Home />
           </Route>
           <Route exact path="/item/:id">
-            <ItemDetail />
+            <CartContext.Provider value={{ quantity, setQuantity }}>
+              <ItemDetail />
+            </CartContext.Provider>
           </Route>
           <Route exact path="/category/:id">
             <ItemCategory />

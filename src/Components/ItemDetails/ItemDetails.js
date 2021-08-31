@@ -1,25 +1,31 @@
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import Button from "@material-ui/core/Button";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CartWidget from "../CartWidget/CartWidget";
+import { useContext } from "react";
+import { CartContext } from "../../Context/cartContext";
 
 
 function ItemDetails(item) {
   const [cantProd, setCantProd] = useState(0);
+  const [prod, setProd] = useState('')
+  const { quantity, setQuantity } = useContext(CartContext);
 
   //Estado para visualizar el futuro componente card
   const [visibilidad, setVisibilidad] = useState(false)
 
 
-  const onAdd = (cantidad) => {
-    console.log(`Se agrego al carrito ${cantidad}`);
+  const onAdd = (cantidad, itemData) => {
+    console.log(`Se agrego al carrito ${cantidad} del ${itemData}`);
     setCantProd(cantidad);
+    setProd(itemData)
   };
 
   const comprar = () => {
     console.log(`Se compro el producto en numero ${cantProd}`);
     setVisibilidad(true)
+    setQuantity(cantProd, prod)
   };
 
   return (
