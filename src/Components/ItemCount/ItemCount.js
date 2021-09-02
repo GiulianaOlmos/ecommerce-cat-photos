@@ -6,7 +6,7 @@ function ItemCount(props) {
   const [count, setCount] = useState(0);
 
   const sumar = () => {
-    console.log(`el stock es ${props.data.stock}`);
+    console.log(`el stock es ${props.data}`);
     if (count < props.data.stock) {
       setCount(count + 1);
     }
@@ -58,7 +58,7 @@ function ItemCount(props) {
       </ButtonGroup>
       <Button
         disabled={count == 0}
-        onClick={() => props.onAdd(count, props.data.title)}
+        onClick={() => props.onAdd(count, props.data)}
         variant="contained"
         color="primary"
       >
